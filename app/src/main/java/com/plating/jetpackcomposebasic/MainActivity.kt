@@ -12,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,7 +40,7 @@ class MainActivity : ComponentActivity() {
 private fun MyApp(
     modifier: Modifier = Modifier,
 ){
-    var shouldShowOnBoarding by remember { mutableStateOf(true) }
+    var shouldShowOnBoarding by rememberSaveable  { mutableStateOf(true) }
 
     Surface(modifier) {
         if (shouldShowOnBoarding) {
